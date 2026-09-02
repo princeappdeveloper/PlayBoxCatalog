@@ -1,0 +1,37 @@
+categoryId,categoryName,categorySortOrder,recordId,videoId,channelId,channelName,title,description,thumbnailUrl,sortOrder,isActive
+popular,Popular,0,,dQw4w9WgXcQ,ch_dQw4w9WgXcQ,Rick Astley,Rick Astley - Never Gonna Give You Up (Video),,1,true
+popular,Popular,0,,kJQP7kiw5Fk,ch_kJQP7kiw5Fk,Luis Fonsi,Luis Fonsi - Despacito ft. Daddy Yankee,,2,true
+popular,Popular,0,,kffacxfA7G4,ch_kffacxfA7G4,Justin Bieber,Justin Bieber - Baby ft. Ludacris,,3,true
+popular,Popular,0,,fRh_vgS2dFE,ch_fRh_vgS2dFE,Justin Bieber,Justin Bieber - Sorry (PURPOSE: The Movement),,4,true
+popular,Popular,0,,e-ORhEE9VVg,ch_e-ORhEE9VVg,Maroon 5,Maroon 5 - Girls Like You ft. Cardi B,,5,true
+popular,Popular,0,,kXYiU_JCYtU,ch_kXYiU_JCYtU,Maroon 5,Maroon 5 - Sugar (Official Music Video),,6,true
+popular,Popular,0,,0KSOMA3QBU0,ch_0KSOMA3QBU0,Sia,Sia - Cheap Thrills (Performance Video),,7,true
+popular,Popular,0,,LHCob2k3FmQ,ch_LHCob2k3FmQ,Lukas Graham,Lukas Graham - 7 Years (Official Music Video),,8,true
+music,Music,1,,9bZkp7q19f0,ch_9bZkp7q19f0,PSY,PSY - GANGNAM STYLE (Official Music Video),,1,true
+music,Music,1,,RgKAFK5djSk,ch_RgKAFK5djSk,Adele,Adele - Skyfall (Official Music Video),,2,true
+music,Music,1,,aqz-KE-bpKQ,ch_aqz-KE-bpKQ,Marshmello,Marshmello - Alone (Official Music Video),,3,true
+music,Music,1,,YQHsXMglC9A,ch_YQHsXMglC9A,Adele,Adele - Hello (Official Music Video),,4,true
+music,Music,1,,z5rRZdiu1UE,ch_z5rRZdiu1UE,Adele,Adele - Rolling in the Deep (Official Music Video),,5,true
+music,Music,1,,hLQl3WQQoQ0,ch_hLQl3WQQoQ0,Sia,Sia - Chandelier (Official Video),,6,true
+music,Music,1,,K4DyBUG242c,ch_K4DyBUG242c,Post Malone,Post Malone - Circles,,7,true
+music,Music,1,,IpFX2vq8HKw,ch_IpFX2vq8HKw,Sia,Sia - Elastic Heart (Official Video),,8,true
+trending,Trending,2,,hT_nvWreIhg,ch_hT_nvWreIhg,Pharrell Williams,Pharrell Williams - Happy (Official Music Video),,1,true
+trending,Trending,2,,JGwWNGJdvx8,ch_JGwWNGJdvx8,Ed Sheeran,Ed Sheeran - Shape of You (Official Music Video),,2,true
+trending,Trending,2,,7wtfhZwyrcc,ch_7wtfhZwyrcc,Imagine Dragons,Imagine Dragons - Thunder,,3,true
+trending,Trending,2,,kOkQ4T5WO9E,ch_kOkQ4T5WO9E,Charlie Puth,Charlie Puth - Attention (Official Video),,4,true
+trending,Trending,2,,nfWlot6h_JM,ch_nfWlot6h_JM,The Chainsmokers,The Chainsmokers - Closer ft. Halsey,,5,true
+trending,Trending,2,,7HKoqNJtMTQ,ch_7HKoqNJtMTQ,Mark Ronson,Mark Ronson - Uptown Funk ft. Bruno Mars,,6,true
+trending,Trending,2,,B5YNiCfWC3A,ch_B5YNiCfWC3A,Miley Cyrus,Miley Cyrus - Wrecking Ball (Official Video),,7,true
+trending,Trending,2,,QGJuMBdaqIw,ch_QGJuMBdaqIw,Taylor Swift,Taylor Swift - Blank Space,,8,true
+viral,Viral,3,,fJ9rUzIMcZQ,ch_fJ9rUzIMcZQ,Katy Perry,Katy Perry - Roar (Official),,1,true
+viral,Viral,3,,60ItHLz5WEA,ch_60ItHLz5WEA,Alan Walker,Alan Walker - Faded,,2,true
+viral,Viral,3,,pRpeEdMmmQ0,ch_pRpeEdMmmQ0,Shakira,Shakira - Waka Waka (This Time for Africa),,3,true
+viral,Viral,3,,M7lc1UVf-VE,ch_M7lc1UVf-VE,Eminem,Eminem - Not Afraid,,4,true
+viral,Viral,3,,JRfuAukYTKg,ch_JRfuAukYTKg,Eminem,Eminem ft. Rihanna - Love The Way You Lie,,5,true
+viral,Viral,3,,9bZkp7q19f0,ch_9bZkp7q19f0,PSY,PSY - GANGNAM STYLE (Official Music Video),,6,true
+classics,Classics,4,,OPf0YbXqDm0,ch_OPf0YbXqDm0,Flo Rida,Flo Rida - Whistle (Official Video),,1,true
+classics,Classics,4,,CevxZvSJLk8,ch_CevxZvSJLk8,AC/DC,AC/DC - Thunderstruck (Official Video),,2,true
+classics,Classics,4,,3JZ_D3ELwOQ,ch_3JZ_D3ELwOQ,Ed Sheeran,Ed Sheeran - Thinking Out Loud (Official Video),,3,true
+classics,Classics,4,,2Vv-BfVoq4g,ch_2Vv-BfVoq4g,Ed Sheeran,Ed Sheeran - Perfect Symphony (with Andrea Bocelli),,4,true
+classics,Classics,4,,hTWKbfoikeg,ch_hTWKbfoikeg,Nirvana,Nirvana - Smells Like Teen Spirit (Official Music Video),,5,true
+classics,Classics,4,,7HKoqNJtMTQ,ch_7HKoqNJtMTQ,Mark Ronson,Mark Ronson - Uptown Funk ft. Bruno Mars,,6,true
