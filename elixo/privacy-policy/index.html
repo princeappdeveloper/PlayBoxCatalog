@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy &mdash; Elixo</title>
+<meta name="description" content="How the Elixo Android app handles information: on-device media, Google Firebase Analytics, Crashlytics and Remote Configuration, AdMob advertising, and your privacy choices.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#121316">
+<link rel="canonical" href="https://princeappdeveloper.github.io/PlayBoxCatalog/elixo/privacy-policy/">
+<style>
+  /* Cinematic Obsidian, taken from the Android LegalInfoActivity palette:
+     ds_background #121316, ds_surface_container #1F1F23, ds_surface_container_highest #343538,
+     ds_surface_container_lowest #0D0E11, ds_primary #FFC688, ds_primary_container #FF9F0A,
+     ds_on_surface_variant #DAC3AD, outline_card #0FFFFFFF. */
+  :root {
+    --bg: #121316;
+    --surface: #1f1f23;
+    --surface-high: #343538;
+    --surface-lowest: #0d0e11;
+    --stroke: rgba(255, 255, 255, .06);
+    --accent: #ffc688;
+    --heading: #ff9f0a;
+    --body: #dac3ad;
+    --muted: rgba(218, 195, 173, .6);
+    --white: #ffffff;
+    --radius: 16px;
+    --font-head: "Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;
+    --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--body);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Reading progress. Pure CSS where supported; hidden bar is a harmless fallback. */
+  .progress {
+    position: fixed;
+    inset: 0 auto auto 0;
+    height: 2px;
+    width: 100%;
+    background: var(--accent);
+    transform-origin: 0 50%;
+    transform: scaleX(0);
+    z-index: 40;
+  }
+  @supports (animation-timeline: scroll()) {
+    .progress { animation: grow linear; animation-timeline: scroll(root block); }
+  }
+  @keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+  .skip {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--surface);
+    color: var(--accent);
+    padding: 10px 16px;
+    border-radius: 0 0 var(--radius) 0;
+    z-index: 50;
+  }
+  .skip:focus { left: 0; }
+
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:hover { color: #ffd9b0; }
+  a:focus-visible, .chip:focus-visible, .contact:focus-visible, .doclink:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  /* Top bar */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    background: rgba(18, 19, 22, .92);
+    border-bottom: 1px solid var(--stroke);
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--white);
+    font-family: var(--font-head);
+    font-weight: 700;
+  }
+  .mark {
+    width: 26px;
+    height: 26px;
+    border-radius: 8px;
+    /* The gradient stays behind the logo as a fallback: should the asset ever be
+       missing, the original accent tile remains instead of a broken image. */
+    background: linear-gradient(150deg, #ff9f0a, #ffc688 55%, #ffe3c2);
+    object-fit: contain;
+    display: block;
+    flex: 0 0 auto;
+  }
+  .topbar .spacer { flex: 1; }
+  .topbar .doclink {
+    font-family: var(--font-head);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--muted);
+    padding: 7px 12px;
+    border: 1px solid var(--stroke);
+    border-radius: 999px;
+    background: var(--surface);
+  }
+  .topbar .doclink:hover { color: var(--accent); }
+
+  /* Layout */
+  .wrap { max-width: 780px; margin: 0 auto; padding: 24px 20px 64px; }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 10px;
+  }
+  h1 {
+    font-family: var(--font-head);
+    font-size: clamp(28px, 6vw, 40px);
+    line-height: 1.15;
+    letter-spacing: -.02em;
+    color: var(--white);
+    margin: 0 0 14px;
+  }
+
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 22px; }
+  .pill {
+    display: inline-block;
+    background: var(--surface);
+    color: var(--body);
+    border-radius: 999px;
+    padding: 7px 14px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+  }
+  .pill.accent { color: var(--accent); border: 1px solid rgba(255, 198, 136, .25); }
+
+  /* Hero and footer note: privacy-only decoration in the app, kept here too. */
+  .hero, .foot {
+    background: linear-gradient(160deg, #23201c 0%, var(--surface) 62%);
+    border: 1px solid var(--stroke);
+    border-radius: var(--radius);
+    padding: 22px;
+  }
+  .hero { margin: 0 0 20px; }
+  .foot { margin-top: 28px; }
+  .hero h2, .foot h2 {
+    font-family: var(--font-head);
+    font-size: 19px;
+    color: var(--accent);
+    margin: 12px 0 8px;
+  }
+  .hero p, .foot p { margin: 0; }
+
+  .badge {
+    display: inline-block;
+    background: var(--surface-high);
+    color: var(--accent);
+    border-radius: 8px;
+    padding: 5px 9px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: .08em;
+  }
+
+  /* Section navigation */
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 24px;
+    padding: 0;
+    list-style: none;
+  }
+  .chip {
+    display: inline-block;
+    background: var(--surface);
+    color: var(--body);
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 12px;
+    text-decoration: none;
+  }
+  .chip:hover { color: var(--accent); }
+
+  /* Section cards, same 01 / heading / body rhythm as addSections() */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--stroke);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin: 0 0 12px;
+    scroll-margin-top: 84px;
+  }
+  .card-head { display: flex; align-items: center; gap: 8px; }
+  .num {
+    flex: 0 0 24px;
+    height: 24px;
+    display: grid;
+    place-items: center;
+    background: var(--surface-high);
+    color: var(--accent);
+    border-radius: 8px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+  }
+  .card h2 {
+    font-family: var(--font-head);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--heading);
+    margin: 0;
+  }
+  .card p { margin: 12px 0 0; }
+
+  /* Contact row, same as addContactRow() */
+  .contact {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 14px;
+    padding: 12px;
+    background: var(--surface-lowest);
+    border-radius: 12px;
+    text-decoration: none;
+  }
+  .contact .mail { color: var(--accent); font-size: 16px; line-height: 1; }
+  .contact .addr {
+    color: var(--white);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .contact .official {
+    margin-left: auto;
+    flex: 0 0 auto;
+    background: rgba(255, 198, 136, .12);
+    color: var(--accent);
+    border-radius: 999px;
+    padding: 3px 8px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+
+  .colophon {
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 1px solid var(--stroke);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .colophon .spacer { flex: 1; }
+  .colophon nav { display: flex; gap: 16px; }
+
+  @media (max-width: 520px) {
+    .wrap { padding: 20px 16px 48px; }
+    .card, .hero, .foot { padding: 18px 16px; }
+    .contact { flex-wrap: wrap; }
+    .contact .official { margin-left: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .progress { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="progress" role="presentation"></div>
+<a class="skip" href="#doc">Skip to document</a>
+
+<header class="topbar">
+  <a class="brand" href="../index.html"><img class="mark" src="../assets/ic_logo.png" alt="" width="26" height="26"> Elixo</a>
+  <span class="spacer"></span>
+  <a class="doclink" href="../terms/">Terms &amp; Conditions</a>
+</header>
+
+<main class="wrap" id="doc">
+  <p class="eyebrow">Elixo for Android</p>
+  <h1>Privacy Policy</h1>
+
+  <div class="pills">
+    <span class="pill">Effective: October 2, 2026 &bull; v1.0</span>
+    <span class="pill accent">STABLE RELEASE</span>
+  </div>
+
+  <section class="hero">
+    <span class="badge">ON-DEVICE BY DEFAULT</span>
+    <h2>Your Media Stays On Device</h2>
+    <p>Elixo never uploads your videos, music or private files. It does use Google analytics, crash reports and ads, and this policy spells out what can leave your phone.</p>
+  </section>
+
+  <nav aria-label="Sections in this document">
+    <ul class="chips">
+      <li><a class="chip" href="#s1">1. Privacy Policy</a></li>
+      <li><a class="chip" href="#s2">2. Information We Collect</a></li>
+      <li><a class="chip" href="#s3">3. How We Use That Information</a></li>
+      <li><a class="chip" href="#s4">4. Analytics, Crash Reports and Remote Configuration</a></li>
+      <li><a class="chip" href="#s5">5. Advertising and Consent</a></li>
+      <li><a class="chip" href="#s6">6. Information Stored On Your Device</a></li>
+      <li><a class="chip" href="#s7">7. Permissions We Request</a></li>
+      <li><a class="chip" href="#s8">8. Data Sharing, Security and Retention</a></li>
+      <li><a class="chip" href="#s9">9. Your Rights and Choices</a></li>
+      <li><a class="chip" href="#s10">10. Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <article>
+<section class="card" id="s1">
+      <div class="card-head"><span class="num">01</span><h2>Privacy Policy</h2></div>
+      <p>This Privacy Policy explains how Elixo ("we", "our") handles information when you use the Elixo app on Android. Elixo needs no account, and we never ask for your name, address or phone number. This policy covers the Elixo app and the Google services it uses for analytics, crash reporting, remote configuration and advertising. Other apps, websites and media providers you use separately are governed by their own policies.</p>
+    </section>
+
+    <section class="card" id="s2">
+      <div class="card-head"><span class="num">02</span><h2>Information We Collect</h2></div>
+      <p><strong>Your media:</strong> we do not collect, receive or store your videos, music, images or documents. Elixo reads media that is already on your device so that it can list, group and play it.</p>
+      <p><strong>Collected automatically by Google services:</strong> Firebase Analytics records how the app is used, for example which screens you open and which features you use; Firebase Crashlytics records crash reports, stack traces and the app and device state at the moment of a crash; Firebase Remote Configuration delivers app configuration; and Google Mobile Ads (AdMob) receives your device advertising identifier, IP address and ad interactions in order to serve and measure ads.</p>
+      <p><strong>Sent by you:</strong> if you use Feedback Us or contact support, we receive the message you write and nothing else. No app version, device details or advertising identifier is attached automatically.</p>
+      <p><strong>Network requests:</strong> Elixo uses the internet to deliver ads, send analytics and crash data, download configuration, and fetch public media catalogue information published on GitHub.</p>
+    </section>
+
+    <section class="card" id="s3">
+      <div class="card-head"><span class="num">03</span><h2>How We Use That Information</h2></div>
+      <p>We use this information to run and improve Elixo: to keep playback and library features working, to understand which features people use, to find and fix crashes, to deliver configuration updates, to serve and measure advertising, to answer support and feedback messages, and to meet legal obligations. We do not use your media files, your Private Media contents or your listening history for advertising, and we do not use analytics data to build advertising profiles of our own.</p>
+    </section>
+
+    <section class="card" id="s4">
+      <div class="card-head"><span class="num">04</span><h2>Analytics, Crash Reports and Remote Configuration</h2></div>
+      <p>Firebase Analytics, Firebase Crashlytics and Firebase Remote Configuration are Google services operated under Google's privacy policy at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>. Analytics data is used in aggregate to understand feature usage, crash data is used to diagnose faults, and Remote Configuration allows changes to be delivered without publishing an app update. You can reduce this collection by turning off usage and diagnostics sharing in your device Google services settings.</p>
+    </section>
+
+    <section class="card" id="s5">
+      <div class="card-head"><span class="num">05</span><h2>Advertising and Consent</h2></div>
+      <p>Elixo displays ads supplied by Google AdMob. Ads may use your device advertising identifier, an approximate location derived from your IP address, and information about which ads are shown or tapped. Where required, Elixo shows Google's User Messaging Platform consent form before requesting personalised ads; if you decline, non-personalised ads are served instead. You can change your choices in Android Settings &gt; Privacy &gt; Ads, opt out of personalised advertising at <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer">adssettings.google.com</a>, and read how Google uses advertising identifiers at <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">policies.google.com/technologies/ads</a>.</p>
+    </section>
+
+    <section class="card" id="s6">
+      <div class="card-head"><span class="num">06</span><h2>Information Stored On Your Device</h2></div>
+      <p>Elixo stores the following on your device and never uploads it: your playlists and folders, playback history and Continue Watching, playback positions, Recently Added, Recently Played, Most Played, Liked items, Watch Later, the Recycle Bin, and your settings. Files you move into Private Media are moved on this device into an app-private folder, where other apps cannot see them; they are deleted when you remove them or uninstall Elixo. Clearing the app's storage or uninstalling it erases everything listed here.</p>
+    </section>
+
+    <section class="card" id="s7">
+      <div class="card-head"><span class="num">07</span><h2>Permissions We Request</h2></div>
+      <p>Media permissions (Photos and videos, Music and audio on Android 13 and above; storage on older versions) let Elixo list and play the files you choose. Storage write access is requested only on older Android versions, to save copies of media you add. Notifications let Elixo show playback controls. The foreground service and wake lock permissions keep media playing while the app is in the background or the screen is off. Phone state permission lets Elixo pause playback when a call arrives. Internet and network state permissions are used for ads, analytics, configuration and catalogue downloads. Receive boot completed restores your Daily Reminder alarm after a restart. Each permission is requested only for the feature that needs it, and declining one disables that feature without affecting the rest of the app.</p>
+    </section>
+
+    <section class="card" id="s8">
+      <div class="card-head"><span class="num">08</span><h2>Data Sharing, Security and Retention</h2></div>
+      <p>We do not sell or rent personal information, and we do not transmit your media files. Information collected by Google services is handled by Google under its own privacy policies and is subject to those policies. Data is sent over encrypted connections where the provider supports it. Google retains analytics and crash data for the periods described in its own documentation, and we keep messages you email us for as long as needed to answer you and to keep a record of the issue.</p>
+    </section>
+
+    <section class="card" id="s9">
+      <div class="card-head"><span class="num">09</span><h2>Your Rights and Choices</h2></div>
+      <p>Because Elixo has no accounts, we hold no profile of you and there is nothing for us to delete on request. You stay in control of your data directly: clear the app's storage or uninstall it to erase local data; use Android Settings &gt; Apps &gt; Elixo to review and revoke permissions; delete your Google advertising ID or turn off ad personalisation to limit ad targeting; and turn off usage and diagnostics sharing to limit analytics. If you want to ask about data linked to your device, contact us and we will point you to the provider that holds it, including Google.</p>
+    </section>
+
+    <section class="card" id="s10">
+      <div class="card-head"><span class="num">10</span><h2>Contact Us</h2></div>
+      <p>If you have a question, concern or complaint about this Privacy Policy, contact us at the address below. The same policy is published on the web, so you can always check the current version before installing an update.</p>
+      <a class="contact" href="mailto:support.voltz@gmail.com?subject=Elixo%20Privacy%20and%20Terms">
+        <span class="mail" aria-hidden="true">&#9993;</span>
+        <span class="addr">support.voltz@gmail.com</span>
+        <span class="official">Official</span>
+      </a>
+    </section>
+  </article>
+
+  <section class="foot">
+    <h2>No Account, No Upload, No Sale</h2>
+    <p>Elixo works without an account, your media is never sent to us, and we do not sell personal information.</p>
+  </section>
+
+  <div class="colophon">
+    <span>&copy; 2026 Elixo. All rights reserved.</span>
+    <span class="spacer"></span>
+    <nav aria-label="Legal documents">
+      <a href="../index.html">Legal home</a>
+      <a href="../privacy-policy/">Privacy Policy</a>
+      <a href="../terms/">Terms &amp; Conditions</a>
+    </nav>
+  </div>
+</main>
+</body>
+</html>

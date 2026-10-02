@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms &amp; Conditions &mdash; Elixo</title>
+<meta name="description" content="The Terms and Conditions that govern your use of the Elixo app for Android, including permitted use, your media, third-party services, disclaimers and liability.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#121316">
+<link rel="canonical" href="https://princeappdeveloper.github.io/PlayBoxCatalog/elixo/terms/">
+<style>
+  /* Same Cinematic Obsidian tokens as the Privacy Policy page. */
+  :root {
+    --bg: #121316;
+    --surface: #1f1f23;
+    --surface-high: #343538;
+    --surface-lowest: #0d0e11;
+    --stroke: rgba(255, 255, 255, .06);
+    --accent: #ffc688;
+    --heading: #ff9f0a;
+    --body: #dac3ad;
+    --muted: rgba(218, 195, 173, .6);
+    --white: #ffffff;
+    --radius: 16px;
+    --font-head: "Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;
+    --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--body);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .progress {
+    position: fixed;
+    inset: 0 auto auto 0;
+    height: 2px;
+    width: 100%;
+    background: var(--accent);
+    transform-origin: 0 50%;
+    transform: scaleX(0);
+    z-index: 40;
+  }
+  @supports (animation-timeline: scroll()) {
+    .progress { animation: grow linear; animation-timeline: scroll(root block); }
+  }
+  @keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+  .skip {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--surface);
+    color: var(--accent);
+    padding: 10px 16px;
+    border-radius: 0 0 var(--radius) 0;
+    z-index: 50;
+  }
+  .skip:focus { left: 0; }
+
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:hover { color: #ffd9b0; }
+  a:focus-visible, .chip:focus-visible, .contact:focus-visible, .doclink:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    background: rgba(18, 19, 22, .92);
+    border-bottom: 1px solid var(--stroke);
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--white);
+    font-family: var(--font-head);
+    font-weight: 700;
+  }
+  .mark {
+    width: 26px;
+    height: 26px;
+    border-radius: 8px;
+    /* The gradient stays behind the logo as a fallback: should the asset ever be
+       missing, the original accent tile remains instead of a broken image. */
+    background: linear-gradient(150deg, #ff9f0a, #ffc688 55%, #ffe3c2);
+    object-fit: contain;
+    display: block;
+    flex: 0 0 auto;
+  }
+  .topbar .spacer { flex: 1; }
+  .topbar .doclink {
+    font-family: var(--font-head);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--muted);
+    padding: 7px 12px;
+    border: 1px solid var(--stroke);
+    border-radius: 999px;
+    background: var(--surface);
+  }
+  .topbar .doclink:hover { color: var(--accent); }
+
+  .wrap { max-width: 780px; margin: 0 auto; padding: 24px 20px 64px; }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 10px;
+  }
+  h1 {
+    font-family: var(--font-head);
+    font-size: clamp(28px, 6vw, 40px);
+    line-height: 1.15;
+    letter-spacing: -.02em;
+    color: var(--white);
+    margin: 0 0 14px;
+  }
+
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 22px; }
+  .pill {
+    display: inline-block;
+    background: var(--surface);
+    color: var(--body);
+    border-radius: 999px;
+    padding: 7px 14px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+  }
+  .pill.accent { color: var(--accent); border: 1px solid rgba(255, 198, 136, .25); }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 24px;
+    padding: 0;
+    list-style: none;
+  }
+  .chip {
+    display: inline-block;
+    background: var(--surface);
+    color: var(--body);
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 12px;
+    text-decoration: none;
+  }
+  .chip:hover { color: var(--accent); }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--stroke);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin: 0 0 12px;
+    scroll-margin-top: 84px;
+  }
+  .card-head { display: flex; align-items: center; gap: 8px; }
+  .num {
+    flex: 0 0 24px;
+    height: 24px;
+    display: grid;
+    place-items: center;
+    background: var(--surface-high);
+    color: var(--accent);
+    border-radius: 8px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+  }
+  .card h2 {
+    font-family: var(--font-head);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--heading);
+    margin: 0;
+  }
+  .card p { margin: 12px 0 0; }
+
+  .contact {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 14px;
+    padding: 12px;
+    background: var(--surface-lowest);
+    border-radius: 12px;
+    text-decoration: none;
+  }
+  .contact .mail { color: var(--accent); font-size: 16px; line-height: 1; }
+  .contact .addr {
+    color: var(--white);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .contact .official {
+    margin-left: auto;
+    flex: 0 0 auto;
+    background: rgba(255, 198, 136, .12);
+    color: var(--accent);
+    border-radius: 999px;
+    padding: 3px 8px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+
+  .colophon {
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 1px solid var(--stroke);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .colophon .spacer { flex: 1; }
+  .colophon nav { display: flex; gap: 16px; }
+
+  @media (max-width: 520px) {
+    .wrap { padding: 20px 16px 48px; }
+    .card { padding: 18px 16px; }
+    .contact { flex-wrap: wrap; }
+    .contact .official { margin-left: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .progress { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="progress" role="presentation"></div>
+<a class="skip" href="#doc">Skip to document</a>
+
+<header class="topbar">
+  <a class="brand" href="../index.html"><img class="mark" src="../assets/ic_logo.png" alt="" width="26" height="26"> Elixo</a>
+  <span class="spacer"></span>
+  <a class="doclink" href="../privacy-policy/">Privacy Policy</a>
+</header>
+
+<main class="wrap" id="doc">
+  <p class="eyebrow">Elixo for Android</p>
+  <h1>Terms &amp; Conditions</h1>
+
+  <div class="pills">
+    <span class="pill">Effective: October 2, 2026 &bull; v1.0</span>
+    <span class="pill accent">STABLE RELEASE</span>
+  </div>
+
+  <nav aria-label="Sections in this document">
+    <ul class="chips">
+      <li><a class="chip" href="#s1">1. Terms and Conditions</a></li>
+      <li><a class="chip" href="#s2">2. Acceptance of These Terms</a></li>
+      <li><a class="chip" href="#s3">3. Permitted Use</a></li>
+      <li><a class="chip" href="#s4">4. Licence</a></li>
+      <li><a class="chip" href="#s5">5. Your Media and Content</a></li>
+      <li><a class="chip" href="#s6">6. Third-Party Services and Advertising</a></li>
+      <li><a class="chip" href="#s7">7. Disclaimer of Warranties</a></li>
+      <li><a class="chip" href="#s8">8. Limitation of Liability</a></li>
+      <li><a class="chip" href="#s9">9. Changes to These Terms</a></li>
+      <li><a class="chip" href="#s10">10. Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <article>
+<section class="card" id="s1">
+      <div class="card-head"><span class="num">01</span><h2>Terms and Conditions</h2></div>
+      <p>These Terms and Conditions ("Terms") govern your use of the Elixo app for Android. By installing, opening or using Elixo, you agree to them. Elixo is provided free of charge and is distributed through Google Play under Google's own terms.</p>
+    </section>
+
+    <section class="card" id="s2">
+      <div class="card-head"><span class="num">02</span><h2>Acceptance of These Terms</h2></div>
+      <p>If you do not agree with these Terms, do not use the app. If you are below the age at which you can consent to data processing where you live, use Elixo only with the involvement of a parent or guardian. If you use Elixo on a device you do not own, or on behalf of an organisation, you confirm that you are authorised to accept these Terms.</p>
+    </section>
+
+    <section class="card" id="s3">
+      <div class="card-head"><span class="num">03</span><h2>Permitted Use</h2></div>
+      <p>You may use Elixo to play and organise media that you own or are authorised to access. You agree not to misuse the app, including attempting to bypass or defeat its protections, reverse engineering or modifying it beyond what the law allows, removing or obscuring its branding, or using it in a way that breaks applicable law. Features that need a network connection depend on the third-party services described below.</p>
+    </section>
+
+    <section class="card" id="s4">
+      <div class="card-head"><span class="num">04</span><h2>Licence</h2></div>
+      <p>Subject to your compliance with these Terms, we grant you a personal, non-exclusive, non-transferable and revocable licence to install and use Elixo on devices you own or control. You may not sell, rent, sublicense, redistribute or commercially exploit the app.</p>
+    </section>
+
+    <section class="card" id="s5">
+      <div class="card-head"><span class="num">05</span><h2>Your Media and Content</h2></div>
+      <p>Your media files remain yours. You are responsible for holding the rights needed to play any file you open with Elixo. Files you move into Private Media stay on your device in an app-private folder, and you can move them back, delete them, or let them be removed with the app at any time. Elixo claims no ownership of your media and no media is bundled with the app.</p>
+    </section>
+
+    <section class="card" id="s6">
+      <div class="card-head"><span class="num">06</span><h2>Third-Party Services and Advertising</h2></div>
+      <p>Elixo relies on third-party services, including Google Play for distribution and updates, Google Firebase for analytics, crash reporting and remote configuration, Google Mobile Ads for advertising, the Google User Messaging Platform for advertising consent, and public media catalogue files published on GitHub. These services have their own terms and privacy policies, are operated independently of us, and may change or be discontinued at any time.</p>
+    </section>
+
+    <section class="card" id="s7">
+      <div class="card-head"><span class="num">07</span><h2>Disclaimer of Warranties</h2></div>
+      <p>Elixo is provided "as is" and "as available", without warranties of any kind, express or implied, including fitness for a particular purpose, merchantability, non-infringement and accuracy. We do not warrant that playback will be uninterrupted, error-free or supported for every file or stream, nor that catalogue content will always be available or up to date. Some features depend on your device, your network, your permissions and third-party services, all of which are outside our control.</p>
+    </section>
+
+    <section class="card" id="s8">
+      <div class="card-head"><span class="num">08</span><h2>Limitation of Liability</h2></div>
+      <p>To the maximum extent permitted by law, we are not liable for indirect, incidental, special, punitive or consequential damages, or for lost data, lost media or loss of profits, arising from your use of or inability to use Elixo. Where liability cannot be excluded, it is limited to the greater of the amount you paid for the app, which is zero, and the minimum amount permitted by law. Nothing in these Terms limits rights or remedies you have under mandatory consumer law.</p>
+    </section>
+
+    <section class="card" id="s9">
+      <div class="card-head"><span class="num">09</span><h2>Changes to These Terms</h2></div>
+      <p>We may update these Terms to reflect changes in the app or in the law. The version shown in the app is the version that applies to your installation, and the same document is published on the web. When we make a material change, we will state the new effective date in the app. Continuing to use Elixo after a change means you accept the updated Terms.</p>
+    </section>
+
+    <section class="card" id="s10">
+      <div class="card-head"><span class="num">10</span><h2>Contact Us</h2></div>
+      <p>If you have a question about these Terms, send it to us at the address below and we will respond as soon as we reasonably can.</p>
+      <a class="contact" href="mailto:support.voltz@gmail.com?subject=Elixo%20Privacy%20and%20Terms">
+        <span class="mail" aria-hidden="true">&#9993;</span>
+        <span class="addr">support.voltz@gmail.com</span>
+        <span class="official">Official</span>
+      </a>
+    </section>
+  </article>
+
+  <div class="colophon">
+    <span>&copy; 2026 Elixo. All rights reserved.</span>
+    <span class="spacer"></span>
+    <nav aria-label="Legal documents">
+      <a href="../index.html">Legal home</a>
+      <a href="../privacy-policy/">Privacy Policy</a>
+      <a href="../terms/">Terms &amp; Conditions</a>
+    </nav>
+  </div>
+</main>
+</body>
+</html>

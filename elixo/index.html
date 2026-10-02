@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elixo &mdash; Legal</title>
+<meta name="description" content="The Elixo Privacy Policy and Terms and Conditions for the Elixo Android app.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#121316">
+<link rel="canonical" href="https://princeappdeveloper.github.io/PlayBoxCatalog/elixo/">
+<style>
+  /* Cinematic Obsidian, matching the two legal documents. */
+  :root {
+    --bg: #121316;
+    --surface: #1f1f23;
+    --surface-high: #343538;
+    --surface-lowest: #0d0e11;
+    --stroke: rgba(255, 255, 255, .06);
+    --accent: #ffc688;
+    --heading: #ff9f0a;
+    --body: #dac3ad;
+    --muted: rgba(218, 195, 173, .6);
+    --white: #ffffff;
+    --radius: 16px;
+    --font-head: "Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;
+    --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--body);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:hover { color: #ffd9b0; }
+  a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  .wrap { max-width: 780px; margin: 0 auto; padding: 48px 20px 64px; }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+  .mark {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    /* Gradient retained as a fallback behind the logo. */
+    background: linear-gradient(150deg, #ff9f0a, #ffc688 55%, #ffe3c2);
+    object-fit: contain;
+    display: block;
+    flex: 0 0 auto;
+  }
+  .brand .name {
+    font-family: var(--font-head);
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--white);
+  }
+  .brand .sub {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 10px;
+  }
+  h1 {
+    font-family: var(--font-head);
+    font-size: clamp(28px, 6vw, 38px);
+    line-height: 1.15;
+    letter-spacing: -.02em;
+    color: var(--white);
+    margin: 0 0 14px;
+  }
+  .lede { margin: 0 0 22px; }
+
+  .pill {
+    display: inline-block;
+    background: var(--surface);
+    color: var(--body);
+    border-radius: 999px;
+    padding: 7px 14px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+  }
+
+  .docs { display: grid; gap: 12px; margin: 26px 0 0; padding: 0; list-style: none; }
+
+  .doc {
+    display: block;
+    background: var(--surface);
+    border: 1px solid var(--stroke);
+    border-radius: var(--radius);
+    padding: 20px;
+    text-decoration: none;
+  }
+  .doc:hover { border-color: rgba(255, 198, 136, .28); }
+  .doc-head { display: flex; align-items: center; gap: 10px; }
+  .doc h2 {
+    font-family: var(--font-head);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--heading);
+    margin: 0;
+  }
+  .doc .arrow { margin-left: auto; color: var(--accent); font-size: 16px; line-height: 1; }
+  .doc p { margin: 10px 0 0; color: var(--muted); font-size: 14px; }
+
+  .card {
+    background: linear-gradient(160deg, #23201c 0%, var(--surface) 62%);
+    border: 1px solid var(--stroke);
+    border-radius: var(--radius);
+    padding: 22px;
+    margin-top: 26px;
+  }
+  .card h2 {
+    font-family: var(--font-head);
+    font-size: 17px;
+    color: var(--accent);
+    margin: 0 0 8px;
+  }
+  .card p { margin: 0; }
+
+  .contact {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 14px;
+    padding: 12px;
+    background: var(--surface-lowest);
+    border-radius: 12px;
+    text-decoration: none;
+  }
+  .contact .mail { color: var(--accent); font-size: 16px; line-height: 1; }
+  .contact .addr {
+    color: var(--white);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .contact .official {
+    margin-left: auto;
+    flex: 0 0 auto;
+    background: rgba(255, 198, 136, .12);
+    color: var(--accent);
+    border-radius: 999px;
+    padding: 3px 8px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+
+  .colophon {
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 1px solid var(--stroke);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .colophon .spacer { flex: 1; }
+  .colophon nav { display: flex; gap: 16px; }
+
+  @media (max-width: 520px) {
+    .wrap { padding: 32px 16px 48px; }
+    .doc, .card { padding: 18px 16px; }
+    .contact { flex-wrap: wrap; }
+    .contact .official { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="brand">
+    <img class="mark" src="assets/ic_logo.png" alt="" width="40" height="40">
+    <span>
+      <span class="name">Elixo</span><br>
+      <span class="sub">for Android</span>
+    </span>
+  </div>
+
+  <p class="eyebrow">Legal</p>
+  <h1>Privacy &amp; Terms</h1>
+  <p class="lede">The documents below are the same ones shown inside the Elixo app. Read them here, in the app, or both.</p>
+
+  <span class="pill">Effective: October 2, 2026 &bull; v1.0</span>
+
+  <ul class="docs">
+    <li>
+      <a class="doc" href="privacy-policy/">
+        <span class="doc-head">
+          <h2>Privacy Policy</h2>
+          <span class="arrow" aria-hidden="true">&rarr;</span>
+        </span>
+        <p>What the app reads, what Google services can collect, where data is stored, and the choices you control.</p>
+      </a>
+    </li>
+    <li>
+      <a class="doc" href="terms/">
+        <span class="doc-head">
+          <h2>Terms &amp; Conditions</h2>
+          <span class="arrow" aria-hidden="true">&rarr;</span>
+        </span>
+        <p>What you agree to when you use Elixo, including your media, third-party services, and liability.</p>
+      </a>
+    </li>
+  </ul>
+
+  <section class="card">
+    <h2>Support</h2>
+    <p>Questions about either document can go straight to the Elixo support address.</p>
+    <a class="contact" href="mailto:support.voltz@gmail.com?subject=Elixo%20Privacy%20and%20Terms">
+      <span class="mail" aria-hidden="true">&#9993;</span>
+      <span class="addr">support.voltz@gmail.com</span>
+      <span class="official">Official</span>
+    </a>
+  </section>
+
+  <div class="colophon">
+    <span>&copy; 2026 Elixo. All rights reserved.</span>
+    <span class="spacer"></span>
+    <nav aria-label="Legal documents">
+      <a href="privacy-policy/">Privacy Policy</a>
+      <a href="terms/">Terms &amp; Conditions</a>
+    </nav>
+  </div>
+</main>
+</body>
+</html>
