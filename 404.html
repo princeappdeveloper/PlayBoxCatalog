@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page not found | Fyndora Apps</title>
+<meta name="description" content="The page you were looking for could not be found. Return to the Fyndora Apps homepage.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#121316">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="/PlayBoxCatalog/assets/favicon.svg">
+<style>
+  :root {
+    --bg: #121316;
+    --bg-deep: #0d0e11;
+    --surface: #1f1f23;
+    --stroke: rgba(255, 255, 255, .07);
+    --accent: #ffc688;
+    --accent-strong: #ff9f0a;
+    --accent-soft: #ffe3c2;
+    --body: #dac3ad;
+    --muted: rgba(218, 195, 173, .62);
+    --white: #ffffff;
+    --radius: 16px;
+    --font-head: "Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;
+    --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background:
+      radial-gradient(900px 500px at 80% -10%, rgba(255, 159, 10, .16), transparent 60%),
+      linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
+    color: var(--body);
+    font-family: var(--font-body);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:hover { color: var(--accent-soft); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
+  .card {
+    width: 100%;
+    max-width: 520px;
+    background: linear-gradient(155deg, #23201c 0%, var(--surface) 62%);
+    border: 1px solid var(--stroke);
+    border-radius: 22px;
+    padding: 40px 32px;
+    text-align: center;
+    box-shadow: 0 30px 70px -40px rgba(0, 0, 0, .9);
+  }
+  .mark {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+  }
+  .code {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 10px;
+  }
+  h1 {
+    font-family: var(--font-head);
+    font-size: clamp(26px, 6vw, 34px);
+    letter-spacing: -.02em;
+    color: var(--white);
+    margin: 0 0 12px;
+  }
+  p { margin: 0 auto 26px; max-width: 40ch; color: var(--muted); }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+  }
+  .btn-primary {
+    color: var(--bg-deep);
+    background: linear-gradient(150deg, var(--accent-strong), var(--accent) 58%, var(--accent-soft));
+  }
+  .btn-primary:hover { color: var(--bg-deep); filter: brightness(1.05); }
+  .btn-ghost { color: var(--body); background: rgba(255, 255, 255, .03); border-color: var(--stroke); }
+  .btn-ghost:hover { color: var(--accent); border-color: rgba(255, 198, 136, .4); }
+  .foot { margin-top: 28px; font-size: 13px; color: var(--muted); }
+</style>
+</head>
+<body>
+<main class="card">
+  <img class="mark" src="/PlayBoxCatalog/assets/favicon.svg" alt="Fyndora Apps" width="60" height="60">
+  <p class="code">Error 404</p>
+  <h1>Page not found</h1>
+  <p>The page you were looking for does not exist or may have moved. Head back to the Fyndora Apps homepage to find what you need.</p>
+  <div class="actions">
+    <a class="btn btn-primary" href="/PlayBoxCatalog/">Go to Homepage</a>
+    <a class="btn btn-ghost" href="https://princeappdeveloper.github.io/PlayBoxCatalog/elixo/privacy-policy/">Privacy Policy</a>
+  </div>
+  <p class="foot">Fyndora Apps &mdash; Thoughtful mobile applications.</p>
+</main>
+</body>
+</html>
