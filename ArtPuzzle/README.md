@@ -53,8 +53,9 @@ Each record in `manifest.json` contains:
 - `sourcePage`, `originalUrl`, `author`, `license`, `licenseUrl`, `attributionRequired` -
   Wikimedia Commons attribution and licensing.
 
-The app only downloads `batch` records when its remaining locally playable regular levels drop to
-50 or fewer. It never downloads the whole catalog in one run and never needs authentication.
+The app downloads one batch of at most 100 records only when its remaining locally playable regular
+levels drop to 50 or fewer. It never downloads the whole catalog in one run and never needs
+authentication.
 
 ## Attribution
 
