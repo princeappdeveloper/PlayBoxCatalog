@@ -51,7 +51,7 @@ same applicable license.
 - **Creator:** Anton Zelenov
 - **Original source page:** https://commons.wikimedia.org/wiki/File%3ABanana%20beach%20Phuket%202017%20-%2001.jpg
 - **License:** CC BY-SA 4.0 - https://creativecommons.org/licenses/by-sa/4.0
-- **Attribution:** Anton Zelenov; "Banana beach Phuket 2017 - 01.jpg"; source: https://commons.wikimedia.org/wiki/File%3ABanana%20beach%20Phuket%202017%20-%2001.jpg; license: https://creativecommons.org/licenses/by-sa/4.0; converted and resized to WebP, aspect ratio retained.
+- **Attribution:** Photo: Anton Zelenov; "Banana beach Phuket 2017 - 01.jpg"; source: https://commons.wikimedia.org/wiki/File%3ABanana%20beach%20Phuket%202017%20-%2001.jpg; license: https://creativecommons.org/licenses/by-sa/4.0; converted and resized to WebP, aspect ratio retained.
 - **WebP:** `daily_2026_11_04.webp` (2560 x 1707, 717610 bytes; SHA-256 `7319bc43074f02e7352549886541dd1f730896664d36dfb01c516d4a435ac9f1`).
 
 ### daily_2026_11_05 - 2026-11-05
