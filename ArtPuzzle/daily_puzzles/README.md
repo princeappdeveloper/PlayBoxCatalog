@@ -6,17 +6,26 @@ artwork as a Daily Puzzle asset.
 
 ## Publication status
 
-The initial catalog set contains **92** licensed photographs and complete monthly manifests:
+The catalog contains **242** licensed photographs with complete monthly manifests:
 
-- November 2026: 30 images
-- December 2026: 31 images
-- January 2027: 31 images
+- November 2026: 30 images (bundled in Android)
+- December 2026: 31 images (bundled in Android)
+- January 2027: 31 images (bundled in Android)
+- February 2027: 28 images (remote-only)
+- March 2027: 31 images (remote-only)
+- April 2027: 30 images (remote-only)
+- May 2027: 31 images (remote-only)
+- June 2027: 30 images (remote-only)
 
-The images are distinct from the regular catalog and are recorded individually in
-[`ATTRIBUTION.md`](./ATTRIBUTION.md). The originals were checked against Wikimedia Commons SHA-1
-metadata before conversion; WebP files preserve aspect ratio and have measured dimensions, sizes,
-and SHA-256 digests in their manifests. A manifest is included only when every calendar day in its
-month has a valid image.
+The 150 February-June images are catalog-only; do not copy them into Android assets. All images are
+distinct from the regular catalog and have individual records in [`ATTRIBUTION.md`](./ATTRIBUTION.md).
+The original files for the 92-image bundled set and the first seven February images were checked
+against Wikimedia Commons SHA-1 metadata. The other 143 February-June images were acquired from
+Wikimedia Commons' standardized 3840px thumbnail endpoint after direct original-file requests were
+rate-limited; their source pages, creators, and licenses were verified. All outputs preserve aspect
+ratio, are converted to WebP at a maximum dimension of 2560 pixels, and have measured dimensions,
+sizes, and SHA-256 digests in their manifests. A manifest is included only when every calendar day
+in its month has a valid image.
 
 ## Layout and naming
 
@@ -30,10 +39,20 @@ daily_puzzles/
     2026/11.json
     2026/12.json
     2027/01.json
+    2027/02.json
+    2027/03.json
+    2027/04.json
+    2027/05.json
+    2027/06.json
   images/
     2026/11_november/v1/
     2026/12_december/v1/
     2027/01_january/v1/
+    2027/02_february/v1/
+    2027/03_march/v1/
+    2027/04_april/v1/
+    2027/05_may/v1/
+    2027/06_june/v1/
 ```
 
 Use the stable ID `daily_YYYY_MM_DD` and the matching `.webp` filename. For example, the ID and
@@ -104,8 +123,10 @@ details from a filename or an image host.
    Record its original image page, creator, license, license URL, and required credit immediately.
 2. Compare the candidate images against all regular catalog images and one another; reject duplicate
    and near-duplicate photographs.
-3. Convert verified originals to high-quality WebP without distorting or aggressively compressing
-   them. Keep each actual file in the corresponding year/month/version directory.
+3. Convert verified originals, or a Commons-standard high-resolution thumbnail when direct original
+   access is rate-limited, to high-quality WebP without distorting or aggressively compressing the
+   image. Record which source rendition was used. Keep each actual file in the corresponding
+   year/month/version directory.
 4. Generate the month manifest using the Android field names above. Use actual measured dimensions,
    file sizes, and SHA-256 digests. Confirm that IDs and dates are unique, all dates belong to the
    month, and every `path` resolves to an actual file under this directory.
@@ -123,5 +144,6 @@ atomically. It prefetches the next month and keeps downloaded versions in app-pr
 
 ## Current files
 
-All 92 daily files are present in versioned image directories and referenced by complete manifests.
-The catalog must be committed and pushed to `main` before the raw URLs can serve this set.
+All 242 daily files are present in versioned image directories and referenced by complete
+manifests. The catalog must be committed and pushed to `main` before the raw URLs can serve these
+files.
